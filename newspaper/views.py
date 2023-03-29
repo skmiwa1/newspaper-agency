@@ -3,6 +3,7 @@ from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views import generic
 
+from newspaper.forms import TopicSearchForm
 from newspaper.models import Redactor, Article, Topic
 
 
@@ -28,6 +29,23 @@ class TopicListView(generic.ListView):
     model = Topic
     context_object_name = "topic_list"
     template_name = "newspaper/topic_list.html"
+
+    def get_context_data(self, *, object_list=None, **kwargs):
+        contex = super(TopicListView, self).get_context_data(**kwargs)
+        name = self.request.GET.get("name", "")
+        contex["search_form"] = TopicSearchForm(
+            initial={"name": name}
+        )
+        return contex
+
+    def get_queryset(self):
+        queryset = Topic.objects.all()
+        form = TopicSearchForm(self.request.GET)
+        if form.is_valid():
+            return queryset.filter(
+                name__icontains=form.cleaned_data["name"]
+            )
+        return queryset
 
 
 class ArticleListView(generic.ListView):
