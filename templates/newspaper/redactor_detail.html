@@ -12,11 +12,12 @@
   <div class="ml-3">
     <h4>Articles:</h4>
 
-    {% for car in driver.cars.all %}
-        <hr>
-        <p><strong>Model:</strong> {{ car.model }}</p>
-        <p><strong>Manufacturer:</strong> {{ car.manufacturer.name }}</p>
-        <p class="text-muted"><strong>Id:</strong> {{car.id}}</p>
+    {% for article in redactor.articles.all %}
+      <hr>
+      <p><strong>Title:</strong> {{ article.title }}</p>
+      <p><strong>Topic:</strong> {{ article.topic.name }}</p>
+      <p class="text-muted"><strong>Id:</strong> {{article.id}}</p>
+
 
     {% empty %}
       <p>No articles!</p>
