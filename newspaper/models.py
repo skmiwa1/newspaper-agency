@@ -3,6 +3,7 @@ from django.db import models
 
 from django.contrib.auth.models import AbstractUser
 from django.db import models
+from django.urls import reverse
 
 
 class Topic(models.Model):
@@ -10,6 +11,9 @@ class Topic(models.Model):
 
     def __str__(self):
         return self.name
+
+    def get_absolute_url(self):
+        return reverse("newspaper:topic-list", kwargs={"pk": self.pk})
 
 
 class Redactor(AbstractUser):
