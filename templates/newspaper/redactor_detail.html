@@ -2,16 +2,15 @@
 
 {% block content %}
   <h1>
-    Username: {{ driver.username }}
+    Redactor`s name: {{ redactor.username }}
   </h1>
 
-  <p><strong>First name:</strong> {{ driver.first_name }}</p>
-  <p><strong>Last name:</strong> {{ driver.last_name }}</p>
-  <p><strong>License number:</strong> {{ driver.license_number }}</p>
-  <p><strong>Is staff:</strong> {{ driver.is_staff }}</p>
+  <p><strong>First name:</strong> {{ redactor.first_name }}</p>
+  <p><strong>Last name:</strong> {{ redactor.last_name }}</p>
+  <p><strong>Years of experience:</strong> {{ redactor.years_of_experience }} years</p>
 
   <div class="ml-3">
-    <h4>Cars</h4>
+    <h4>Articles:</h4>
 
     {% for car in driver.cars.all %}
         <hr>
@@ -20,7 +19,7 @@
         <p class="text-muted"><strong>Id:</strong> {{car.id}}</p>
 
     {% empty %}
-      <p>No cars!</p>
+      <p>No articles!</p>
     {% endfor %}
   </div>
 {% endblock %}
