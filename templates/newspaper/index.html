@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Newspaper Home</h1>
+    <p>Wellcome to the Mountains Time</p>
+    <h3>Newspaper content</h3>
+    <ul>
+        <li>Num topics: {{ num_topics }}</li>
+        <li>Num articles: {{ num_articles }}</li>
+        <li>Literary redactors: {{ num_redactors }}</li>
+    </ul>
+{#  <p>You have visited this page {{ num_visits }} time{{ num_visits|pluralize }}.</p>#}
+{% endblock %}
