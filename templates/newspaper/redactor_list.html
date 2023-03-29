@@ -14,11 +14,13 @@
       <tr>
         <th>id</th>
         <th> name</th>
+        <th>years of experience</th>
       </tr>
       {% for redactor in redactor_list %}
         <tr>
           <td> {{ redactor.id }}</td>
           <td><a href="{{ redactor.get_absolute_url }}" >{{ redactor.first_name }} {{ redactor.last_name }}</a></td>
+          <td>{{ redactor.years_of_experience }}</td>
         </tr>
       {% endfor %}
 

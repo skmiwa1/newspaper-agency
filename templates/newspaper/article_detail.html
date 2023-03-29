@@ -5,6 +5,13 @@
   <h1>
     {{ article.title }}
   </h1>
+    <a href="{% url 'newspaper:article-delete' pk=article.id %}" class="btn btn-danger link-to-page">
+      Delete
+    </a>
+
+    <a href="{% url 'newspaper:article-update' pk=article.id %}" class="btn btn-secondary link-to-page">
+      Update
+    </a>
   <p>
     {{ article.content }}
   </p>
