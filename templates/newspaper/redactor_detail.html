@@ -14,7 +14,7 @@
 
     {% for article in redactor.articles.all %}
       <hr>
-      <p><strong>Title:</strong> {{ article.title }}</p>
+      <p><strong>Title:</strong><a href="{{ article.get_absolute_url }}">{{ article.title }}</a></p>
       <p><strong>Topic:</strong> {{ article.topic.name }}</p>
       <p class="text-muted"><strong>Id:</strong> {{article.id}}</p>
 
