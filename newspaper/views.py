@@ -1,5 +1,6 @@
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
+from django.urls import reverse_lazy
 from django.views import generic
 
 from newspaper.models import Redactor, Article, Topic
@@ -39,6 +40,23 @@ class ArticleListView(generic.ListView):
 
 class ArticleDetailView(generic.DetailView):
     model = Article
+
+
+class ArticleCreateView(generic.CreateView):
+    model = Article
+    fields = "__all__"
+    success_url = reverse_lazy("newspaper:article-list")
+
+
+class ArticleUpdateView(generic.UpdateView):
+    model = Article
+    fields = "__all__"
+    success_url = reverse_lazy("newspaper:article-list")
+
+
+class ArticleDeleteView(generic.DeleteView):
+    model = Article
+    success_url = reverse_lazy("newspaper:article-list")
 
 
 class RedactorListView(generic.ListView):
