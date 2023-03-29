@@ -18,3 +18,4 @@ def index(request):
     }
 
     return render(request, "newspaper/index.html", context=context)
+
