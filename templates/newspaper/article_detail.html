@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 
+
 {% block content %}
   <h1>
     {{ article.title }}
@@ -13,4 +14,6 @@
     <a href="{{ redactor.get_absolute_url }}"> {{ redactor.username }}</a>
   {% endfor %}
   </p>
+  <br>
+  <button>Button</button>
 {% endblock %}
