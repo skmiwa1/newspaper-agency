@@ -1,9 +1,11 @@
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
 from django.views import generic
 
 from newspaper.models import Redactor, Article, Topic
 
 
+@login_required
 def index(request):
     num_redactors = Redactor.objects.count()
     num_articles = Article.objects.count()
@@ -31,10 +33,21 @@ class ArticleListView(generic.ListView):
     model = Article
     context_object_name = "article_list"
     template_name = "newspaper/article_list.html"
+    paginate_by = 3
+    queryset = Article.objects.select_related("topic")
+
+
+class ArticleDetailView(generic.DetailView):
+    model = Article
 
 
 class RedactorListView(generic.ListView):
     model = Redactor
     context_object_name = "redactor_list"
     template_name = "newspaper/redactor_list.html"
+    paginate_by = 3
 
+
+class RedactorDetailView(generic.DetailView):
+    model = Redactor
+    queryset = Redactor.objects.all()

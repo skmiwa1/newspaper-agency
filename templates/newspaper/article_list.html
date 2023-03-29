@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h1>Topic List
+    <h1>Articles List
     </h1>
 
     {% if article_list %}
@@ -9,11 +9,15 @@
       <tr>
         <th>id</th>
         <th>article</th>
+        <th>topic</th>
+        <th>publisher</th>
       </tr>
       {% for article in article_list %}
         <tr>
           <td> {{ article.id }}</td>
-          <td> {{ article.title }} </td>
+          <td><a href="{{ article.get_absolute_url }}">{{ article.title }}</a>  </td>
+          <td> {{ article.topic }} </td>
+          <td> {{ article.publishers }} </td>
         </tr>
       {% endfor %}
 

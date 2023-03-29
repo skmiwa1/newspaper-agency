@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>
+    {{ article.title }}
+  </h1>
+  <p>
+    {{ article.content }}
+  </p>
+  <br>
+  <p>written  by
+  {% for redactor in article.publishers.all %}
+    <a href="{{ redactor.get_absolute_url }}"> {{ redactor.username }}</a>
+  {% endfor %}
+  </p>
+{% endblock %}
