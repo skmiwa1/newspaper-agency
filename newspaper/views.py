@@ -1,4 +1,5 @@
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views import generic
@@ -25,7 +26,7 @@ def index(request):
     return render(request, "newspaper/index.html", context=context)
 
 
-class TopicListView(generic.ListView):
+class TopicListView(LoginRequiredMixin, generic.ListView):
     model = Topic
     context_object_name = "topic_list"
     template_name = "newspaper/topic_list.html"
@@ -48,7 +49,7 @@ class TopicListView(generic.ListView):
         return queryset
 
 
-class ArticleListView(generic.ListView):
+class ArticleListView(LoginRequiredMixin, generic.ListView):
     model = Article
     context_object_name = "article_list"
     template_name = "newspaper/article_list.html"
@@ -73,28 +74,28 @@ class ArticleListView(generic.ListView):
         return queryset
 
 
-class ArticleDetailView(generic.DetailView):
+class ArticleDetailView(LoginRequiredMixin, generic.DetailView):
     model = Article
 
 
-class ArticleCreateView(generic.CreateView):
-    model = Article
-    fields = "__all__"
-    success_url = reverse_lazy("newspaper:article-list")
-
-
-class ArticleUpdateView(generic.UpdateView):
+class ArticleCreateView(LoginRequiredMixin, generic.CreateView):
     model = Article
     fields = "__all__"
     success_url = reverse_lazy("newspaper:article-list")
 
 
-class ArticleDeleteView(generic.DeleteView):
+class ArticleUpdateView(LoginRequiredMixin, generic.UpdateView):
+    model = Article
+    fields = "__all__"
+    success_url = reverse_lazy("newspaper:article-list")
+
+
+class ArticleDeleteView(LoginRequiredMixin, generic.DeleteView):
     model = Article
     success_url = reverse_lazy("newspaper:article-list")
 
 
-class RedactorListView(generic.ListView):
+class RedactorListView(LoginRequiredMixin, generic.ListView):
     model = Redactor
     context_object_name = "redactor_list"
     template_name = "newspaper/redactor_list.html"
@@ -118,6 +119,6 @@ class RedactorListView(generic.ListView):
         return queryset
 
 
-class RedactorDetailView(generic.DetailView):
+class RedactorDetailView(LoginRequiredMixin, generic.DetailView):
     model = Redactor
     queryset = Redactor.objects.all()
