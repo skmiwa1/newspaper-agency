@@ -18,32 +18,9 @@
 </head>
 <body>
 
-  <section id="nav-bar">
-
-  <nav class="navbar navbar-expand-lg navbar-light">
-    <a class="navbar-brand" href="#"><img src="{% static 'img' %}" alt=""></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="{% url 'newspaper:index' %}">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'newspaper:topic-list' %}">All topics</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'newspaper:article-list' %}">All articles</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link " href="{% url 'newspaper:redactor-list' %}">Redactors</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
-
-  </section>
+      {% block sidebar %}
+          {% include "includes/sidebar.html" %}
+      {% endblock %}
 {#  -----------------------#}
 <section id="banner">
   <div class="container">
@@ -55,30 +32,15 @@
   </div>
   </div>
 
-
   </section>
-  <html>
-      <div class="container-fluid">
-          <div class="row">
-              <div class="col-sm-1">
-                  {% block sidebar %}
-                      {% include "includes/sidebar.html" %}
-                  {% endblock %}
-              </div>
-              <div class="col-sm-11">
-                  {% block content %}{% endblock %}
 
-                  {% block pagination %}
-                    {% include "includes/pagination.html" %}
-                  {% endblock %}
-                  {% block footer %}
-                    {% include "includes/footer.html" %}
-                  {% endblock %}
-              </div>
-
-          </div>
-      </div>
-  </html>
+      {% block content %} {% endblock %}
+      {% block pagination %}
+        {% include "includes/pagination.html" %}
+      {% endblock %}
+      {% block footer %}
+        {% include "includes/footer.html" %}
+      {% endblock %}
 
 </body>
 

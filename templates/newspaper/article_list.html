@@ -2,7 +2,8 @@
 {% load crispy_forms_filters %}
 
 {% block content %}
-    <h1>Articles List
+  <div class="container">
+       <h1>Articles List
     <a href="{% url 'newspaper:article-create' %}" class="btn btn-primary link-to-page">
       Add new article
     </a>
@@ -33,4 +34,7 @@
     {% else %}
       <p>There are no topics on the site.</p>
     {% endif %}
+
+  </div>
+
 {% endblock %}
