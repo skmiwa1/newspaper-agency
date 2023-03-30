@@ -1,13 +1,39 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h1>Newspaper Home</h1>
-    <p>Wellcome to the Mountains Time</p>
     <h3>Newspaper content</h3>
-    <ul>
-        <li>Num topics: {{ num_topics }}</li>
-        <li>Num articles: {{ num_articles }}</li>
-        <li>Literary redactors: {{ num_redactors }}</li>
-    </ul>
+
 {#  <p>You have visited this page {{ num_visits }} time{{ num_visits|pluralize }}.</p>#}
+
+
+
+
+
+
+<div class="jumbotron text-center">
+  <h1>Welcome to Mountain newspaper agency</h1>
+  <p>Resize this responsive page to see the effect!</p>
+  <h3>We offer to You today:</h3>
+
+
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+      <h3>Articles number:</h3>
+      <p>{{ num_topics }}</p>
+
+    </div>
+    <div class="col-sm-4">
+      <h3>Topics available:</h3>
+      <p>{{ num_articles }}</p>
+
+    </div>
+    <div class="col-sm-4">
+      <h3>Staff working:</h3>
+      <p>{{ num_redactors }}</p>
+    </div>
+  </div>
+</div>
+
 {% endblock %}
