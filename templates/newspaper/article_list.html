@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+{% load crispy_forms_filters %}
+
+{% block content %}
+  <section id="banner">
+  <div class="container">
+  <div class="row">
+  <div class="col-md-6">
+  <p class="promo-title">Welcome to Mountain newspaper agency</p>
+  <p>Here You will have a possibility to create articles, sorting them by topics, as well as reading other`s</p>
+  </div>
+  </div>
+  </div>
+  </section>
+
+  <div class="container">
+       <h1 id="blank-text">Articles
+    <a href="{% url 'newspaper:article-create' %}" class="btn btn-info link-to-page">
+      Add new ?
+    </a>
+    </h1>
+
+    {% if article_list %}
+    <form action="" method="get" class="form-inline">
+      {{ search_form|crispy }}
+      <input class="btn btn-info" type="submit" value="🔍">
+    </form>
+      <br>
+    <table class="table ">
+      <tr class="table-info">
+        <th>id</th>
+        <th>article</th>
+        <th>topic</th>
+      </tr>
+      {% for article in article_list %}
+        <tr id="blank-text">
+          <td> {{ article.id }}</td>
+          <td><a href="{{ article.get_absolute_url }}">{{ article.title }}</a>  </td>
+          <td> {{ article.topic }} </td>
+        </tr>
+      {% endfor %}
+    </table>
+    {% else %}
+      <p>There are no topics on the site.</p>
+    {% endif %}
+  </div>
+
+{% endblock %}
+
+
+
+    {% if topic_list %}
+      <form action="" method="get" class="form-inline">
+      {{ search_form|crispy }}
+      <input class="btn btn-primary" type="submit" value="🔍">
+      </form>
+    <table class="table">
+
+        <tr class="table-success">
+          <th>id</th>
+          <th>Title</th>
+        </tr>
+
+      {% for topic in topic_list %}
+        <tr>
+          <td> {{ topic.id }}</td>
+          <td> {{ topic.name }} </td>
+        </tr>
+      {% endfor %}
+
+    </table>
+    {% else %}
+      <p>There are no topics on the site.</p>
+    {% endif %}
+  </div>

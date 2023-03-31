@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <section id="banner">
+  <div class="container">
+  <div class="row">
+  <div class="col-md-6">
+  <p class="promo-title">Some personal</p>
+  <p>here you have access to all articles made by {{ redactor.username }}</p>
+  </div>
+  </div>
+  </div>
+  </section>
+
+<div class="container" id="blank-text">
+  <h1>
+    <div id="centered-text">
+      <p>Redactor`s name: {{ redactor.username }}</p>
+    </div>
+  </h1>
+
+  <p><strong>First name:</strong> {{ redactor.first_name }}</p>
+  <p><strong>Last name:</strong> {{ redactor.last_name }}</p>
+  <p><strong>Years of experience:</strong> {{ redactor.years_of_experience }} years</p>
+
+  <div class="ml-3">
+    <div id="article">Articles:</div>
+    {% for article in redactor.articles.all %}
+      <p><div id="rdti">Title:</div><a href="{{ article.get_absolute_url }}" class="btn btn-info" role="button">{{ article.title }}</a></p>
+      <p id="rdt"><strong>Telling about</strong> {{ article.topic.name }}</p>
+    {% empty %}
+      <p>No articles!</p>
+    {% endfor %}
+  </div>
+</div>
+
+{% endblock %}

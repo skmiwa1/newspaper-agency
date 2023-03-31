@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block content %}
+
+<section id="banner">
+  <div class="container">
+  <div class="row">
+  <div class="col-md-6">
+  <p class="promo-title">Welcome to Mountain newspaper agency</p>
+  <p>Here You will have a possibility to create articles, sorting them by topics, as well as reading other`s</p>
+  </div>
+  </div>
+  </div>
+
+  </section>
+ <section class="dyn-content">
+
+    <div class="container">
+      <div class="row text-center">
+        <div class="col-md-4 dyn-content">
+          {% load static %}
+          <img src="{% static 'img/articles.png' %}" alt="" class="dyn-img">
+          <h4>
+            <a href="{% url 'newspaper:article-list' %}">
+              {{ num_articles }} Articles
+            </a>
+          </h4>
+          <p id="blank-text">Newest in neighborhood</p>
+        </div>
+        <div class="col-md-4 dyn-content">
+          {% load static %}
+          <img src="{% static 'img/redactors.png' %}" alt="" class="dyn-img">
+          <h4>
+            <a href="{% url 'newspaper:redactor-list' %}">
+              {{ num_redactors }} Redactors
+            </a>
+          </h4>
+          <p id="blank-text">Knows a lot, trust me!</p>
+        </div>
+        <div class="col-md-4 dyn-content">
+          {% load static %}
+          <img src="{% static 'img/topics.png' %}" alt="" class="dyn-img">
+          <h4>
+            <a href="{% url 'newspaper:topic-list' %}">
+              {{ num_topics }} Topics
+            </a>
+          </h4>
+          <p id="blank-text">Go for it</p>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}

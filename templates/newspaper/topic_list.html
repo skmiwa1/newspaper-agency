@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% load crispy_forms_filters %}
+
+{% block content %}
+
+  <section id="banner">
+  <div class="container">
+  <div class="row">
+  <div class="col-md-6">
+  <p class="promo-title">Here you may observe some of the most popular topics</p>
+  <p>Use search form to quick overview</p>
+  </div>
+  </div>
+  </div>
+  </section>
+
+  <div class="container">
+    <h1 id="blank-text">Topics
+    </h1>
+
+    {% if topic_list %}
+      <form action="" method="get" class="form-inline">
+      {{ search_form|crispy }}
+      <input class="btn btn-info" type="submit" value="🔍">
+      </form>
+      <br>
+    <table class="table">
+        <tr class="table-info">
+          <th>id</th>
+          <th>Title</th>
+        </tr>
+
+      {% for topic in topic_list %}
+        <tr id="blank-text">
+          <td> {{ topic.id }}</td>
+          <td> {{ topic.name }} </td>
+        </tr>
+      {% endfor %}
+
+    </table>
+    {% else %}
+      <p>There are no topics on the site.</p>
+    {% endif %}
+  </div>
+
+{% endblock %}

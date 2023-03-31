@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+
+  <section id="banner">
+  <div class="container">
+  <div class="row">
+  <div class="col-md-6">
+  <p class="promo-title">Article will be lost forever</p>
+  <p>sure about it?</p>
+  </div>
+  </div>
+  </div>
+  </section>
+
+  <div class="container">
+   <h3>{{ article }}</h3>
+  <p>Proceed?</p>
+
+  <form action="" method="POST">
+  {% csrf_token %}
+  <input type="submit" class="btn btn-danger" value="Yes" >
+  </form>
+  <br>
+  <a class="btn btn-secondary" href="{% url "newspaper:article-list" %}">Go back</a>
+  </div>
+
+{% endblock %}
