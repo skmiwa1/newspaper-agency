@@ -2,22 +2,38 @@
 {% load crispy_forms_filters %}
 
 {% block content %}
+
+  <section id="banner">
   <div class="container">
-    <h1>Topic List
+  <div class="row">
+  <div class="col-md-6">
+  <p class="promo-title">Here you may observe some of the most popular topics</p>
+  <p>Use search form to quick overview</p>
+  </div>
+  </div>
+  </div>
+
+  </section>
+
+  <div class="container">
+    <h1 id="blank-text">Topics
     </h1>
 
     {% if topic_list %}
       <form action="" method="get" class="form-inline">
       {{ search_form|crispy }}
-      <input class="btn btn-primary" type="submit" value="🔍">
+      <input class="btn btn-info" type="submit" value="🔍">
       </form>
+      <br>
     <table class="table">
-      <tr>
-        <th>id</th>
-        <th>Title</th>
-      </tr>
+
+        <tr class="table-info">
+          <th>id</th>
+          <th>Title</th>
+        </tr>
+
       {% for topic in topic_list %}
-        <tr>
+        <tr id="blank-text">
           <td> {{ topic.id }}</td>
           <td> {{ topic.name }} </td>
         </tr>
@@ -30,3 +46,5 @@
   </div>
 
 {% endblock %}
+
+

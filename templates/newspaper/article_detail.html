@@ -2,7 +2,20 @@
 
 
 {% block content %}
-  <h1>
+
+  <section id="banner">
+  <div class="container">
+  <div class="row">
+  <div class="col-md-6">
+  <p class="promo-title">Welcome to Mountain newspaper agency</p>
+  <p>Here You will have a possibility to create articles, sorting them by topics, as well as reading other`s</p>
+  </div>
+  </div>
+  </div>
+
+  </section>
+  <div class="container">
+    <h1>
     {{ article.title }}
   </h1>
     <a href="{% url 'newspaper:article-delete' pk=article.id %}" class="btn btn-danger link-to-page">
@@ -22,5 +35,6 @@
   {% endfor %}
   </p>
   <br>
-  <button>Button</button>
+  </div>
+
 {% endblock %}

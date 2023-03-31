@@ -1,7 +1,19 @@
 {% extends "base.html" %}
 {% block content %}
- <h3>{{ article }}</h3>
-  <p>This article will be deleted</p>
+
+  <section id="banner">
+  <div class="container">
+  <div class="row">
+  <div class="col-md-6">
+  <p class="promo-title">Article will be lost forever</p>
+  <p>sure about it?</p>
+  </div>
+  </div>
+  </div>
+
+  </section>
+  <div class="container">
+   <h3>{{ article }}</h3>
   <p>Proceed?</p>
 
   <form action="" method="POST">
@@ -10,4 +22,6 @@
   </form>
   <br>
   <a class="btn btn-secondary" href="{% url "newspaper:article-list" %}">Go back</a>
+  </div>
+
 {% endblock %}

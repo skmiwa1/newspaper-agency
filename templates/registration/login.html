@@ -2,6 +2,7 @@
 {% load crispy_forms_filters %}
 
 {% block content %}
+  <div class="container">
 
   {% if form.errors %}
     <p>Your username and password didn't match. Please try again.</p>
@@ -20,5 +21,8 @@
     <input type="submit" value="Login" class="btn btn-primary" />
     <input type="hidden" name="next" value="{{ next }}" />
   </form>
+
+  </div>
+
 
 {% endblock %}

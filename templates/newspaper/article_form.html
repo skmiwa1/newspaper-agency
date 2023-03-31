@@ -2,11 +2,25 @@
 {% load crispy_forms_filters %}
 
 {% block content %}
-  <h1>{{ object|yesno:"Update,Create" }} Drivers</h1>
-  <form action="" method="post" novalidate>
-    {% csrf_token %}
-    {{ form|crispy }}
 
-    <input type="Submit" value="Submit" class="btn btn-primary">
-  </form>
+    <section id="banner">
+    <div class="container">
+    <div class="row">
+    <div class="col-md-6">
+    <p class="promo-title">Welcome to Mountain newspaper agency</p>
+    <p>Here You will have a possibility to create articles, sorting them by topics, as well as reading other`s</p>
+    </div>
+    </div>
+    </div>
+    </section>
+  <div class="container">
+    <h1>{{ object|yesno:"Update,Create" }} Drivers</h1>
+    <form action="" method="post" novalidate>
+      {% csrf_token %}
+      {{ form|crispy }}
+
+      <input type="Submit" value="Submit" class="btn btn-primary">
+    </form>
+  </div>
+
 {% endblock %}

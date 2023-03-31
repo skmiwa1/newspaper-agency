@@ -63,3 +63,49 @@ body
     padding: 20px;
 }
 /* --------- FOOTER ---------*/
+.dyn-content{
+    padding: 50px 0;
+}
+
+.dyn-content h4{
+    padding: 5px;
+    margin-top: 25px;
+}
+.dyn-img{
+    width: 150px;
+
+}
+#centered-text
+{
+text-align: center;
+margin-top: 50px;
+font-size: 24px;
+font-weight: bold;
+color: darkcyan;
+}
+#article
+{
+    font-size: 33px;
+
+    text-align: center;
+    color: cadetblue;
+}
+
+#rdt
+{
+    font-size: 15px;
+}
+#rdti
+{
+    font-weight: bold;
+    color: cadetblue;
+}
+
+.table-info
+{
+    color: darkcyan;
+}
+#blank-text
+{
+    color: darkcyan;
+}

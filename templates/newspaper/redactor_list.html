@@ -2,26 +2,40 @@
 {% load crispy_forms_filters %}
 
 {% block content %}
+
+  <section id="banner">
   <div class="container">
-    <h1>Redactors List
+  <div class="row">
+  <div class="col-md-6">
+  <p class="promo-title">Welcome to Mountain newspaper agency</p>
+  <p>Here You will have a possibility to create articles, sorting them by topics, as well as reading other`s</p>
+  </div>
+  </div>
+  </div>
+
+  </section>
+
+  <div class="container">
+    <h1 id="blank-text">Redactors List
     </h1>
 
     {% if redactor_list %}
     <form action="" method="get" class="form-inline">
       {{ search_form|crispy }}
-      <input class="btn btn-primary" type="submit" value="🔍">
+      <input class="btn btn-info" type="submit" value="🔍">
     </form>
+      <br>
     <table class="table">
-      <tr>
+      <tr class="table table-info">
         <th>id</th>
         <th> name</th>
         <th>years of experience</th>
       </tr>
       {% for redactor in redactor_list %}
-        <tr>
+        <tr id="blank-text">
           <td> {{ redactor.id }}</td>
-          <td><a href="{{ redactor.get_absolute_url }}" >{{ redactor.first_name }} {{ redactor.last_name }}</a></td>
-          <td>{{ redactor.years_of_experience }}</td>
+          <td id="blank-text"><a href="{{ redactor.get_absolute_url }}" >{{ redactor.first_name }} {{ redactor.last_name }}</a></td>
+          <td >{{ redactor.years_of_experience }}</td>
         </tr>
       {% endfor %}
 
