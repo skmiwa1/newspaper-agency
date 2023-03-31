@@ -50,8 +50,7 @@ body
     margin-top: auto;
 
 }
-/* --------- DYN-CONTENT ---------*/
-/* --------- FOOTER ---------*/
+
 .footer {
     background-image: linear-gradient(to right, var(--first), var(--second));
     color: var(--fourth);
@@ -62,7 +61,7 @@ body
 .footer-box{
     padding: 20px;
 }
-/* --------- FOOTER ---------*/
+
 .dyn-content{
     padding: 50px 0;
 }
