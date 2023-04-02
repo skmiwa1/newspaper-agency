@@ -1,0 +1,110 @@
+body
+{
+    font-family: sans-serif;
+    font-weight: lighter;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+#nav-bar
+{
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.navbar-brand
+{
+    height: 25px;
+}
+.navbar
+{
+    background-image: linear-gradient(to right, #a517ba,#5f1782);
+    padding: 0;
+}
+.navbar-nav li
+{
+    padding: 0 10px;
+}
+.navbar-nav li a
+{
+    color: #fff !important;
+    font-weight: 6000;
+}
+
+
+#banner
+{
+    background-image: linear-gradient(to right, #a517ba,#5f1782);
+    color: #fff;
+    padding-top: 1%;
+}
+.promo-title
+{
+    font-size: 40px;
+    font-weight: 600;
+    margin-top: 100px;
+}
+#foot p
+{
+    margin-top: auto;
+
+}
+
+.footer {
+    background-image: linear-gradient(to right, var(--first), var(--second));
+    color: var(--fourth);
+
+    margin-top: auto;
+}
+
+.footer-box{
+    padding: 20px;
+}
+
+.dyn-content{
+    padding: 50px 0;
+}
+
+.dyn-content h4{
+    padding: 5px;
+    margin-top: 25px;
+}
+.dyn-img{
+    width: 150px;
+
+}
+#centered-text
+{
+text-align: center;
+margin-top: 50px;
+font-size: 24px;
+font-weight: bold;
+color: darkcyan;
+}
+#article
+{
+    font-size: 33px;
+
+    text-align: center;
+    color: cadetblue;
+}
+
+#rdt
+{
+    font-size: 15px;
+}
+#rdti
+{
+    font-weight: bold;
+    color: cadetblue;
+}
+
+.table-info
+{
+    color: darkcyan;
+}
+#blank-text
+{
+    color: darkcyan;
+}

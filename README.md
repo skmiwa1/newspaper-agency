@@ -1,6 +1,6 @@
 # Newspaper project
 
-
+DATABASE_URL=postgres://nvkvjlfc:7XtKBEgjxglt_EUOhHRjo5CJdxH72IMs@snuffleupagus.db.elephantsql.com/nvkvjlfc
 
 Django project for managing workflow in a newspaper agency
 
