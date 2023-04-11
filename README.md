@@ -3,7 +3,7 @@
 Django project for managing workflow in a newspaper agency
 
 ## Check it out!
-[Newspaper project deployed to Render](https://)
+[Newspaper project deployed to Render](https://newspaper-agence.onrender.com/)
 
 ## Installation
 
