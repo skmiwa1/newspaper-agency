@@ -1,7 +1,5 @@
 # Newspaper project
 
-DATABASE_URL=postgres://nvkvjlfc:7XtKBEgjxglt_EUOhHRjo5CJdxH72IMs@snuffleupagus.db.elephantsql.com/nvkvjlfc
-
 Django project for managing workflow in a newspaper agency
 
 ## Check it out!
@@ -16,6 +14,7 @@ python -m venv venv
 venv\Scripts\activate (on Windows)
 source venv/bin/activate (on macOS)
 pip install -r requirements.txt
+python manage.py migrate
 python manage.py runserver #Starts Django Server
 ```
 
@@ -27,7 +26,7 @@ python manage.py runserver #Starts Django Server
 * Powerful admin panel for advanced managing!
 
 ## Credential for testing
-  - Login: `John_Vebber`
+  - Login: `John_Vebb`
   - Password: `1qazcde3`
 
 ## Demo

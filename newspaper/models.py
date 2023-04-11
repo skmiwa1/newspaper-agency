@@ -8,7 +8,7 @@ from django.urls import reverse
 class Topic(models.Model):
     name = models.CharField(max_length=63, unique=True)
 
-    def __str__(self):
+    def __str__(self) -> str:
         return self.name
 
 
@@ -20,7 +20,7 @@ class Redactor(AbstractUser):
         verbose_name = "redactor"
         verbose_name_plural = "redactors"
 
-    def __str__(self):
+    def __str__(self) -> str:
         return f"{self.first_name} {self.last_name}"
 
     def get_absolute_url(self):
@@ -34,7 +34,7 @@ class Article(models.Model):
     topic = models.ForeignKey(to=Topic, on_delete=models.CASCADE)
     publishers = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name="articles")
 
-    def __str__(self):
+    def __str__(self) -> str:
         return self.title
 
     def get_absolute_url(self):
