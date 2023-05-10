@@ -31,10 +31,10 @@ python manage.py runserver #Starts Django Server
 
 ## Demo
 * Main page
-![Website interface](readme_pics/home_page.png)
+![Website interface](readme_pics/home_page.jpg)
 
 * Article list
-![Article list page](readme_pics/article_list_page.png)
+![Article list page](readme_pics/article_list_page.jpg)
 
 * Article delete page
-![delete page](readme_pics/delete_article_page.png)
+![delete page](readme_pics/delete_article_page.jpg)
